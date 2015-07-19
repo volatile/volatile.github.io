@@ -10,6 +10,12 @@ body {
 	font-size: 16px;
 }
 
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
 .full-height {
 	min-height: 100%;
 }
@@ -28,22 +34,23 @@ header {
 
 header h1.logo {
 	font-size: 18px;
-	letter-spacing: .16em;
 	font-weight: 300;
 	line-height: 1;
-	margin: 0;
 
 	position: absolute;
 	top: 50%;
 	left: 50%;
 
 	width: 600px;
+	margin: 0;
 	padding-top: 130px;
+	padding-left: 5px; /* Correct letter-spacing shift. */
 
 	-webkit-transform: translate(-50%, -50%);
 	    -ms-transform: translate(-50%, -50%);
 	        transform: translate(-50%, -50%);
 	text-align: center;
+	letter-spacing: .15em;
 	text-transform: uppercase;
 
 	color: #2d3236;
