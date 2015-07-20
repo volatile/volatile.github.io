@@ -1,0 +1,43 @@
+.hljs {
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font-size: 14px;
+	line-height: 1.2;
+
+	display: block;
+	overflow-x: auto;
+
+	padding: 0 0 0 25px;
+
+	border-left: 2px #dbe2e8 solid;
+}
+
+.hljs,
+.hljs-list .hljs-built_in {
+	color: #000;
+}
+
+.hljs-attribute,
+.hljs-built_in,
+.hljs-constant,
+.hljs-keyword,
+.hljs-tag,
+.hljs-typename {
+	color: #007aff;
+}
+
+.hljs-keyword,
+.hljs-tag {
+	font-weight: bold;
+}
+
+.hljs-cdata,
+.hljs-comment,
+.hljs-doctype {
+	color: #bec9d3;
+}
+
+.hljs-number,
+.hljs-string,
+.hljs-value {
+	color: #5e676e;
+}
