@@ -8,7 +8,8 @@
 
 	padding: 0 0 0 25px;
 
-	border-left: 2px #dbe2e8 solid;
+	border-left: 2px solid #dbe2e8;
+	background: #fff;
 }
 
 .hljs,
@@ -22,7 +23,7 @@
 .hljs-keyword,
 .hljs-tag,
 .hljs-typename {
-	color: #007aff;
+	color: #5856d6;
 }
 
 .hljs-keyword,

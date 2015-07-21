@@ -1,0 +1,42 @@
+<h1>Introduction</h1>
+<p>
+	Volatile is a new web framework for <a href="http://golang.org" title="The Go language official website">Go</a> (golang), designed with <strong>readability</strong>, <strong>flexibility</strong> and <strong>performance</strong> in mind.<br>
+</p>
+<p>
+	The "middlewares" serving style is well known these days.<br>
+	It offers a lot of options to filter and transform requests/responses, and to connect components in a very easy way.<br>
+	But we'll just use the "handler" term instead of "middleware" as we think it's more accurate.
+</p>
+<h2>The handlers stack</h2>
+<p>
+	So the handlers stack is the backbone of Volatile. Everything revolves around it.<br>
+	You can connect all ond <strong>only the components you need</strong> inside you application. Volatile is all but a monolithic framework.
+</p>
+<p>
+	The <a href="https://github.com/volatile/core" title="Volatile Core on GitHub">Core</a> package provides the foundation of Volatile by creating a context for each request and throwing it inside the handlers chain.
+</p>
+<p>
+	Here is the visualization of the serving flow when using <a href="https://github.com/volatile/log" title="Volatile Log on GitHub">Log</a>, <a href="https://github.com/volatile/compress" title="Volatile Compress on GitHub">Compress</a> and <a href="https://github.com/volatile/cors" title="Volatile CORS on GitHub">CORS</a> handlers:
+</p>
+<p class="shift">
+	<img src="/images/doc/serving-flow.svg" alt="Serving flow">
+</p>
+<h2>The handler</h2>
+<p>
+	A handler is a simple function that receives a "context".<br>
+	It has the possibility to break the handler chain or to continue with the next handler in the stack.
+</p>
+<p>
+	To add a handler to the stack, just use the Core's <a href="https://godoc.org/github.com/volatile/core#Use"><code>Use</code></a> method:
+</p>
+<pre><code class="go">core.Use(func(c *core.Context) {
+    c.Next() // Go to the next handler in the stack.
+})
+
+core.Use(func(c *core.Context) {
+    // No c.Next(): the handlers chain is broken.
+})</code></pre>
+<h2>The context</h2>
+<p>
+	A context encapsulates the classics: the <a href="http://golang.org/pkg/net/http/#Request"><code>*http.Request</code></a> and the <a href="http://golang.org/pkg/net/http/#ResponseWriter"><code>http.ResponseWriter</code></a> from the standard <a href="http://golang.org/pkg/net/http/">net/http</a> package.
+</p>
