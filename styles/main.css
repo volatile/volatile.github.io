@@ -188,8 +188,8 @@ header .down-arrow {
 	-webkit-transform: translateX(-50%);
 	    -ms-transform: translateX(-50%);
 	        transform: translateX(-50%);
-	-webkit-animation: floating 2s 0.1s infinite ease-in-out, fadein 4s ease-in;
-	        animation: floating 2s 0.1s infinite ease-in-out, fadein 4s ease-in;
+	-webkit-animation: floating 2s .1s infinite ease-in-out, fadein 4s ease-in;
+	        animation: floating 2s .1s infinite ease-in-out, fadein 4s ease-in;
 
 	background: url("/images/down-arrow.svg") center bottom no-repeat;
 }
@@ -329,7 +329,7 @@ section .section-title {
 
 section.handlers-helpers {
 	color: #fff;
-	background: linear-gradient(135deg, rgba(90,63,181,1) 0%,rgba(59,192,255,1) 100%);
+	background: linear-gradient(135deg, #5a3fb5 0%, #3bc0ff 100%);
 }
 
 section.handlers-helpers .section-title {
