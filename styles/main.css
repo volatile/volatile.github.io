@@ -359,27 +359,27 @@ section.handlers-helpers .section-title {
 
 @keyframes floating {
 	from {
-		-ms-transform: translateY(0%);
-		    transform: translateY(0%);
+		-ms-transform: translate(-50%, 0%);
+		    transform: translate(-50%, 0%);
 	}
 	50% {
-		-ms-transform: translateY(-50%);
-		    transform: translateY(-50%);
+		-ms-transform: translate(-50%, -50%);
+		    transform: translate(-50%, -50%);
 	}
 	to {
-		-ms-transform: translateY(0%);
-		    transform: translateY(0%);
+		-ms-transform: translate(-50%, 0%);
+		    transform: translate(-50%, 0%);
 	}
 }
 
 @-webkit-keyframes floating {
 	from {
-		-webkit-transform: translateY(0%);
+		-webkit-transform: translate(-50%, 0%);
 	}
 	50% {
-		-webkit-transform: translateY(-50%);
+		-webkit-transform: translate(-50%, -50%);
 	}
 	to {
-		-webkit-transform: translateY(0%);
+		-webkit-transform: translate(-50%, 0%);
 	}
 }
