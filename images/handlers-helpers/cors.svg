@@ -6,9 +6,9 @@
             <g transform="translate(1.000000, 1.000000)">
                 <circle cx="6" cy="39" r="6"></circle>
                 <circle cx="72" cy="6" r="6"></circle>
-                <circle cx="72" cy="72" r="6"></circle>
+                <circle cx="62" cy="72" r="6"></circle>
                 <path d="M12,36 L66,9" stroke-linecap="square"></path>
-                <path d="M12,70 L66,43" stroke-linecap="square" transform="translate(39.000000, 56.500000) scale(1, -1) translate(-39.000000, -56.500000) "></path>
+                <path d="M12,69 L56,42" stroke-linecap="square" transform="translate(34.000000, 55.500000) scale(1, -1) translate(-34.000000, -55.500000) "></path>
             </g>
         </g>
     </g>
