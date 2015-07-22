@@ -1,0 +1,9 @@
+<h1>Things to know</h1>
+<ul>
+	<li>
+		When a handler writes the body of a response, it brakes the handlers chain so a context <a href="https://godoc.org/github.com/volatile/core#Context.Next" title="GoDoc"><code>Next()</code></a> call has no effect.
+	</li>
+	<li>
+		Remember that response headers must be set before the body is written. After that, trying to set a header has no effect.<br>
+	</li>
+</ul>

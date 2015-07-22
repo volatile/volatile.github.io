@@ -34,6 +34,10 @@ body {
 	min-height: 100%;
 }
 
+.dim {
+	color: #bec9d3;
+}
+
 
 /* Titles */
 
@@ -275,7 +279,7 @@ section .section-title {
 }
 
 .doc .table-of-contents {
-	width: 300px;
+	width: 320px;
 }
 
 .doc .table-of-contents ol {
@@ -321,7 +325,7 @@ section .section-title {
 }
 
 .doc .content {
-	padding-left: 200px;
+	padding-left: 100px;
 }
 
 .doc .content p.shift {

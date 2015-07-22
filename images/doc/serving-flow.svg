@@ -29,21 +29,21 @@
                 <rect stroke="#DBE2E8" stroke-width="2" x="0" y="0" width="98" height="29" rx="3"></rect>
                 <text font-family="Gotham" font-size="18" font-weight="313">
                     <tspan x="6" y="21" fill="#BECAD3">LOG </tspan>
-                    <tspan x="51.234" y="21" fill="#FFCC00">END</tspan>
+                    <tspan x="51.234" y="21" fill="#5E676E">END</tspan>
                 </text>
             </g>
             <g transform="translate(76.000000, 305.000000)">
                 <rect stroke="#DBE2E8" stroke-width="2" x="0" y="0" width="162" height="29" rx="3"></rect>
                 <text font-family="Gotham" font-size="18" font-weight="313">
                     <tspan x="6" y="21" fill="#BECAD3">COMPRESS </tspan>
-                    <tspan x="115.206" y="21" fill="#FFCC00">END</tspan>
+                    <tspan x="115.206" y="21" fill="#5E676E">END</tspan>
                 </text>
             </g>
             <g transform="translate(106.000000, 264.000000)">
                 <rect stroke="#DBE2E8" stroke-width="2" x="0" y="0" width="111" height="29" rx="3"></rect>
                 <text font-family="Gotham" font-size="18" font-weight="313">
                     <tspan x="6" y="21" fill="#BECAD3">CORS </tspan>
-                    <tspan x="64.158" y="21" fill="#FFCC00">END</tspan>
+                    <tspan x="64.158" y="21" fill="#5E676E">END</tspan>
                 </text>
             </g>
             <g transform="translate(117.000000, 215.000000)">

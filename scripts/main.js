@@ -5,10 +5,14 @@ function hashInDocTableOfContents(hash) {
 
 function loadDocContent(hash) {
 	$.get('/doc/'+hash.substr(1)+'.html', function(data) {
-		$('.doc .content').html(data);
-		$('pre code').each(function(i, block) {
-			hljs.highlightBlock(block);
-		});
+		$('.doc .content').fadeOut(100, function(argument) {
+			// Replace content.
+			$(this).html(data);
+			// Set highlight.js on new content.
+			$('pre code').each(function(i, block) {
+				hljs.highlightBlock(block);
+			});
+		}).fadeIn(100);
 	});
 }
 

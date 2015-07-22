@@ -21,8 +21,10 @@
 .hljs-built_in,
 .hljs-constant,
 .hljs-keyword,
+.hljs-literal,
 .hljs-tag,
-.hljs-typename {
+.hljs-typename,
+.hljs-variable {
 	color: #5856d6;
 }
 
@@ -33,7 +35,8 @@
 
 .hljs-cdata,
 .hljs-comment,
-.hljs-doctype {
+.hljs-doctype,
+.hljs-shebang {
 	color: #bec9d3;
 }
 

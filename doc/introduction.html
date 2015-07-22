@@ -10,7 +10,7 @@
 <h2>The handlers stack</h2>
 <p>
 	So the handlers stack is the backbone of Volatile. Everything revolves around it.<br>
-	You can connect all ond <strong>only the components you need</strong> inside you application. Volatile is all but a monolithic framework.
+	You can connect all ond <strong>only the components you need</strong> inside you app. Volatile is all but a monolithic framework.
 </p>
 <p>
 	The <a href="https://github.com/volatile/core" title="Volatile Core on GitHub">Core</a> package provides the foundation of Volatile by creating a context for each request and throwing it inside the handlers chain.
@@ -27,7 +27,7 @@
 	It has the possibility to break the handler chain or to continue with the next handler in the stack.
 </p>
 <p>
-	To add a handler to the stack, just use the Core's <a href="https://godoc.org/github.com/volatile/core#Use"><code>Use</code></a> method:
+	To add a handler to the stack, just use the Core's <a href="https://godoc.org/github.com/volatile/core#Use" title="GoDoc"><code>Use</code></a> method:
 </p>
 <pre><code class="go">core.Use(func(c *core.Context) {
     c.Next() // Go to the next handler in the stack.
@@ -38,5 +38,5 @@ core.Use(func(c *core.Context) {
 })</code></pre>
 <h2>The context</h2>
 <p>
-	A context encapsulates the classics: the <a href="http://golang.org/pkg/net/http/#Request"><code>*http.Request</code></a> and the <a href="http://golang.org/pkg/net/http/#ResponseWriter"><code>http.ResponseWriter</code></a> from the standard <a href="http://golang.org/pkg/net/http/">net/http</a> package.
+	A context encapsulates the classics: the <a href="http://golang.org/pkg/net/http/#Request" title="GoDoc"><code>*http.Request</code></a> and the <a href="http://golang.org/pkg/net/http/#ResponseWriter" title="GoDoc"><code>http.ResponseWriter</code></a> from the standard <a href="http://golang.org/pkg/net/http/" title="GoDoc">net/http</a> package.
 </p>
