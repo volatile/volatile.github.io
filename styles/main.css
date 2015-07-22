@@ -133,7 +133,7 @@ header h1.logo {
 	background: url("/images/logo.png") center top no-repeat;
 }
 
-@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+@media (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5) {
 	header h1.logo {
 		background-image: url("/images/logo.png");
 		background-size: 700px 200px;
@@ -178,7 +178,7 @@ header .github:hover span {
 
 header .down-arrow {
 	position: absolute;
-	bottom: 100px;
+	bottom: 50px;
 	left: 50%;
 
 	width: 120px;
@@ -194,13 +194,21 @@ header .down-arrow {
 	background: url("/images/down-arrow.svg") center bottom no-repeat;
 }
 
+@media (max-height: 750px) {
+	header .down-arrow {
+		display: none;
+	}
+}
+
 
 /* Footer */
 
 footer {
 	font-size: 12px;
 
-	margin: 100px;
+	display: block;
+
+	padding: 100px;
 
 	text-align: center;
 
@@ -215,8 +223,6 @@ footer a {
 }
 
 footer .white-logo {
-	display: block;
-
 	width: 75px;
 	height: 15px;
 	margin: 0 auto 25px auto;
@@ -321,6 +327,30 @@ section .section-title {
 .doc .content p.shift {
 	margin: 50px auto;
 	padding-left: 50px;
+}
+
+@media (max-width: 1100px) {
+	.doc {
+		display: block;
+	}
+
+	.doc .table-of-contents,
+	.doc .content {
+		display: block;
+	}
+
+	.doc .table-of-contents {
+		width: inherit;
+		margin-bottom: 100px;
+	}
+
+	.doc .table-of-contents > ol {
+		border-right: 0;
+	}
+
+	.doc .content {
+		padding-left: 0;
+	}
 }
 
 
