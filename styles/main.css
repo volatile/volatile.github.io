@@ -4,6 +4,7 @@ Colors:
 	Light grey:
 		Backgrounds: #dbe2e8
 		Text: #bec9d3
+	Rose: #ff2d55;
 	Purple: #5856d6
 */
 
@@ -30,8 +31,20 @@ body {
 	box-sizing: border-box;
 }
 
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
 .full-height {
-	min-height: 100%;
+	min-height: 100vh;
 }
 
 .dim {
@@ -109,6 +122,9 @@ header {
 	position: relative;
 
 	display: block;
+
+	width: 100%;
+	min-height: 100vh;
 
 	background: #000;
 
@@ -265,24 +281,28 @@ section .section-title {
 /* Documentation */
 
 .doc {
+	background: #fff;
+}
+
+.doc .main {
 	display: table;
 
 	width: 100%;
 	padding: 100px;
 }
 
-.doc .table-of-contents,
-.doc .content {
+.doc .main .table-of-contents,
+.doc .main .content {
 	display: table-cell;
 
 	vertical-align: top;
 }
 
-.doc .table-of-contents {
+.doc .main .table-of-contents {
 	width: 320px;
 }
 
-.doc .table-of-contents ol {
+.doc .main .table-of-contents ol {
 	margin: 0;
 
 	list-style-type: decimal;
@@ -292,26 +312,26 @@ section .section-title {
 	color: #5e676e;
 }
 
-.doc .table-of-contents ol,
-.doc .table-of-contents ol a {
+.doc .main .table-of-contents ol,
+.doc .main .table-of-contents ol a {
 	color: #5e676e;
 }
 
-.doc .table-of-contents ol a:hover {
+.doc .main .table-of-contents ol a:hover {
 	color: #5856d6;
 }
 
-.doc .table-of-contents > ol {
+.doc .main .table-of-contents > ol {
 	padding: 0;
 
 	border-right: 2px solid #dbe2e8;
 }
 
-.doc .table-of-contents li {
+.doc .main .table-of-contents li {
 	display: block;
 }
 
-.doc .table-of-contents li:before {
+.doc .main .table-of-contents li:before {
 	margin-right: 5px;
 
 	content: counters(item, ".") " ";
@@ -320,39 +340,39 @@ section .section-title {
 	color: #bec9d3;
 }
 
-.doc .table-of-contents > ol > li + li {
+.doc .main .table-of-contents > ol > li + li {
 	margin-top: 10px;
 }
 
-.doc .content {
+.doc .main .content {
 	padding-left: 100px;
 }
 
-.doc .content p.shift {
+.doc .main .content p.shift {
 	margin: 50px auto;
 	padding-left: 50px;
 }
 
 @media (max-width: 1100px) {
-	.doc {
+	.doc .main {
 		display: block;
 	}
 
-	.doc .table-of-contents,
-	.doc .content {
+	.doc .main .table-of-contents,
+	.doc .main .content {
 		display: block;
 	}
 
-	.doc .table-of-contents {
+	.doc .main .table-of-contents {
 		width: inherit;
 		margin-bottom: 100px;
 	}
 
-	.doc .table-of-contents > ol {
+	.doc .main .table-of-contents > ol {
 		border-right: 0;
 	}
 
-	.doc .content {
+	.doc .main .content {
 		padding-left: 0;
 	}
 }
@@ -367,6 +387,57 @@ section.handlers-helpers {
 
 section.handlers-helpers .section-title {
 	background: rgba(0, 0, 0, .5);
+}
+
+section.handlers-helpers .grid {
+	margin: 75px;
+
+	text-align: center;
+}
+
+section.handlers-helpers .grid .intro {
+	font-size: 22px;
+	font-weight: 300;
+
+	margin-bottom: 25px;
+}
+
+section.handlers-helpers .grid a {
+	display: inline-block;
+	overflow: hidden;
+
+	width: 175px;
+	margin: 25px;
+	padding: 20px;
+
+	transition: border-color .2s ease-in, background-color .2s ease-in;
+	text-align: center;
+	vertical-align: top;
+
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 3px;
+	background: rgba(255, 255, 255, .2);
+}
+
+section.handlers-helpers .grid a:hover {
+	border-color: #ff2d55;
+	background: #ff2d55;
+}
+
+section.handlers-helpers .grid a img,
+section.handlers-helpers .grid a span {
+	display: block;
+
+	margin: 0 auto;
+}
+
+section.handlers-helpers .grid a span {
+	font-size: 22px;
+
+	margin-top: 20px;
+
+	text-transform: uppercase;
 }
 
 
