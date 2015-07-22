@@ -18,6 +18,12 @@ $(document).ready(function() {
 	// Init highlight.js
 	hljs.initHighlighting();
 
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 200) {
+			$('header .down-arrow').fadeOut(2000);
+		}
+	});
+
 	// Load documentation
 	if (hashInDocTableOfContents(window.location.hash)) {
 		loadDocContent(window.location.hash);

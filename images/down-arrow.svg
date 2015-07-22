@@ -2,7 +2,7 @@
 <svg width="120px" height="63px" viewBox="0 0 120 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs></defs>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g fill="#181B1E">
+        <g fill="#2D3236">
             <path d="M0,3 L60,63 L120,3 L117,0 L60,57 L3,0 L0,3 Z"></path>
         </g>
     </g>
