@@ -390,6 +390,7 @@ section .section-title {
 
 section.handlers-helpers {
 	color: #fff;
+	background: #007aff;
 	background: linear-gradient(135deg, #5a3fb5 0%, #3bc0ff 100%);
 }
 
@@ -418,7 +419,7 @@ section.handlers-helpers .grid a {
 	margin: 25px;
 	padding: 20px;
 
-	transition: border-color .2s ease, background-color .2s ease;
+	transition: border-color .4s ease, background-color .4s ease;
 	text-align: center;
 	vertical-align: top;
 
