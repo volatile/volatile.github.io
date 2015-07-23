@@ -35,17 +35,18 @@ body {
 }
 
 .clearfix {
-  zoom: 1;
+	zoom: 1;
 }
 
 .clearfix:before,
 .clearfix:after {
-  content: "";
-  display: table;
+	display: table;
+
+	content: "";
 }
 
 .clearfix:after {
-  clear: both;
+	clear: both;
 }
 
 .full-height {
@@ -88,7 +89,7 @@ h6:first-child {
 /* Links */
 
 a {
-	transition: color .2s ease-in;
+	transition: color .2s ease;
 	text-decoration: none;
 
 	color: #007aff;
@@ -111,7 +112,7 @@ code {
 }
 
 a > code {
-	transition: background-color .2s ease-in;
+	transition: background-color .2s ease;
 
 	background: #007aff;
 }
@@ -152,8 +153,8 @@ header h1.logo {
 	-webkit-transform: translate(-50%, -50%);
 	    -ms-transform: translate(-50%, -50%);
 	        transform: translate(-50%, -50%);
-	-webkit-animation: fadein 2s ease-in;
-	        animation: fadein 2s ease-in;
+	-webkit-animation: fadein 2s ease;
+	        animation: fadein 2s ease;
 
 	background: url("/images/logo.png") center top no-repeat;
 }
@@ -189,7 +190,7 @@ header .github span {
 
 	margin-right: 60px;
 
-	transition: opacity .2s ease-in;
+	transition: opacity .2s ease;
 	white-space: nowrap;
 	text-decoration: none;
 
@@ -213,8 +214,8 @@ header .down-arrow {
 	-webkit-transform: translateX(-50%);
 	    -ms-transform: translateX(-50%);
 	        transform: translateX(-50%);
-	-webkit-animation: floating 2s .1s infinite ease-in-out, fadein 4s ease-in;
-	        animation: floating 2s .1s infinite ease-in-out, fadein 4s ease-in;
+	-webkit-animation: fadein 6s ease, floating 2s .1s infinite ease-in-out;
+	        animation: fadein 6s ease, floating 2s .1s infinite ease-in-out;
 
 	background: url("/images/down-arrow.svg") center bottom no-repeat;
 }
@@ -417,7 +418,7 @@ section.handlers-helpers .grid a {
 	margin: 25px;
 	padding: 20px;
 
-	transition: border-color .2s ease-in, background-color .2s ease-in;
+	transition: border-color .2s ease, background-color .2s ease;
 	text-align: center;
 	vertical-align: top;
 
@@ -450,6 +451,15 @@ section.handlers-helpers .grid a span {
 
 /* Animations */
 
+@-webkit-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
 @keyframes fadein {
 	from {
 		opacity: 0;
@@ -459,12 +469,15 @@ section.handlers-helpers .grid a span {
 	}
 }
 
-@-webkit-keyframes fadein {
+@-webkit-keyframes floating {
 	from {
-		opacity: 0;
+		-webkit-transform: translate(-50%, 0%);
+	}
+	50% {
+		-webkit-transform: translate(-50%, -50%);
 	}
 	to {
-		opacity: 1;
+		-webkit-transform: translate(-50%, 0%);
 	}
 }
 
@@ -480,17 +493,5 @@ section.handlers-helpers .grid a span {
 	to {
 		-ms-transform: translate(-50%, 0%);
 		    transform: translate(-50%, 0%);
-	}
-}
-
-@-webkit-keyframes floating {
-	from {
-		-webkit-transform: translate(-50%, 0%);
-	}
-	50% {
-		-webkit-transform: translate(-50%, -50%);
-	}
-	to {
-		-webkit-transform: translate(-50%, 0%);
 	}
 }
