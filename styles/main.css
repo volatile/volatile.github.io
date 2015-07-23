@@ -8,6 +8,15 @@ Colors:
 	Purple: #5856d6
 */
 
+
+/* Main */
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
 html,
 body {
 	height: 100%;
@@ -25,20 +34,16 @@ body {
 	color: #000;
 }
 
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-
 .clearfix {
   zoom: 1;
 }
+
 .clearfix:before,
 .clearfix:after {
   content: "";
   display: table;
 }
+
 .clearfix:after {
   clear: both;
 }
@@ -243,6 +248,8 @@ footer a {
 }
 
 footer .white-logo {
+	display: block;
+
 	width: 75px;
 	height: 15px;
 	margin: 0 auto 25px auto;
