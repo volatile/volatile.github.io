@@ -24,7 +24,9 @@ $(document).ready(function() {
 
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 200) {
-			$('header .down-arrow').fadeOut(2000);
+			$('header .down-arrow').css({
+				opacity: 0
+			});
 		}
 	});
 

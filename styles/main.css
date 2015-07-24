@@ -211,6 +211,8 @@ header .down-arrow {
 	height: 63px;
 	margin: 0 auto;
 
+	transition: opacity 2s ease;
+
 	-webkit-transform: translateX(-50%);
 	    -ms-transform: translateX(-50%);
 	        transform: translateX(-50%);
