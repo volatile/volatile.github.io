@@ -28,7 +28,7 @@
     defer gzw.Close()
 
     // Set the binder
-    rwb = ResponseWriterBinder{
+    rwb := ResponseWriterBinder{
         Writer:         gzw, // The binder output.
         ResponseWriter: c.ResponseWriter, // Keep the same Header() and WriteHeader() methods. Only the Write method change internally.
         BeforeWrite:    func(b []byte) {
