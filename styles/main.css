@@ -57,6 +57,10 @@ body {
 	color: #bec9d3;
 }
 
+strong {
+	font-weight: 700;
+}
+
 
 /* Titles */
 
