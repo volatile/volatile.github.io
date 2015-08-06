@@ -13,6 +13,7 @@
 }
 
 .hljs,
+.hljs-code,
 .hljs-list .hljs-built_in {
 	color: #000;
 }
@@ -20,7 +21,9 @@
 .hljs-attribute,
 .hljs-built_in,
 .hljs-constant,
+.hljs-header,
 .hljs-keyword,
+.hljs-link_label,
 .hljs-literal,
 .hljs-tag,
 .hljs-typename,
@@ -28,18 +31,25 @@
 	color: #5856d6;
 }
 
+.hljs-emphasis,
+.hljs-header,
 .hljs-keyword,
+.hljs-strong,
 .hljs-tag {
 	font-weight: bold;
 }
 
+.hljs-blockquote,
+.hljs-bullet,
 .hljs-cdata,
 .hljs-comment,
 .hljs-doctype,
+.hljs-horizontal_rule,
 .hljs-shebang {
 	color: #bec9d3;
 }
 
+.hljs-link_url,
 .hljs-number,
 .hljs-string,
 .hljs-value {

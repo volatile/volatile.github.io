@@ -1,46 +1,38 @@
 <h1>Response writer binding</h1>
 <p>
-	If some of your handlers need to transform the request before sending it, they can't just use the same response writer all the stack long.<br>
+	If some of your handlers need to transform the request before sending it, they can't use the same response writer for all the stream.<br>
 </p>
 <p>
-	To do so, the Core provides a <a href="https://godoc.org/github.com/volatile/core#ResponseWriterBinder" title="GoDoc"><code>ResponseWriterBinder</code></a> structure that has the same signature as an <a href="http://golang.org/pkg/net/http/#ResponseWriter" title="GoDoc"><code>http.ResponseWriter</code></a>.<br>
-	It's particularity is that it redirects the response upstream, to an <a href="http://golang.org/pkg/io/#Writer" title="GoDoc"><code>io.Writer</code></a> that will write itself the original <a href="http://golang.org/pkg/net/http/#ResponseWriter" title="GoDoc"><code>http.ResponseWriter</code></a>.
+	That's why the <a href="https://godoc.org/github.com/volatile/core/httputil" title="GoDoc">Core HTTPUtil</a> provides the <a href="https://godoc.org/github.com/volatile/core/httputil#BindResponseWriter" title="GoDoc"><code>BindResponseWriter</code></a> function.<br>
+	It will transparently replace the context's <a href="https://godoc.org/github.com/volatile/core#Context" title="GoDoc"><code>ResponseWriter</code></a> field by a new one.<br>
+</p>
+<p>
+	After that, when writing a response, the content will be automatically redirected into the the writer provided supplied as the first parameter of <a href="https://godoc.org/github.com/volatile/core/httputil#BindResponseWriter" title="GoDoc"><code>BindResponseWriter</code></a> (that will normally take care to use the original <a href="https://godoc.org/github.com/volatile/core#Context" title="GoDoc"><code>ResponseWriter</code></a>).
 </p>
 <p class="shift">
 	<img src="/images/doc/response-writer-binder.svg" alt="Response writer binder flow">
 </p>
 <p>
-	In other words, the <a href="https://godoc.org/github.com/volatile/core#ResponseWriterBinder" title="GoDoc"><code>ResponseWriterBinder</code></a> has:
-	<ul>
-		<li>An <strong>output</strong>: the response writer used before setting the binder.</li>
-		<li>An <strong>input</strong>: an overwritten response writer used by the next handlers.</li>
-	</ul>
-</p>
-<p>
 	If you need to do something just before writing the response body (like setting headers, as you can't do that after), use the <a href="https://godoc.org/github.com/volatile/core#ResponseWriterBinder" title="GoDoc"><code>BeforeWrite</code></a> field.
 </p>
 <p>
-	The <a href="https://github.com/volatile/compress/blob/master/handler.go" title="Volatile Compress source on GitHub">Compress</a> package is the perfect example of response writer binding:
+	Here is a trivial example where the response is passed to a GZIP writer:
 </p>
 <pre><code class="go">core.Use(func(c *core.Context) {
-    // Set the output
+    // Set the upstream writer.
     gzw := gzip.NewWriter(c.ResponseWriter)
     defer gzw.Close()
 
-    // Set the binder
-    rwb := ResponseWriterBinder{
-        Writer:         gzw, // The binder output.
-        ResponseWriter: c.ResponseWriter, // Keep the same Header() and WriteHeader() methods. Only the Write method change internally.
-        BeforeWrite:    func(b []byte) {
-            // Do something with b before writing the response body.
-        },
-    }
+    c.ResponseWriter.Header().Set("Content-Encoding", "gzip")
 
-    // Set the input
-    c.ResponseWriter = rwb
+    // Set the binder.
+    httputil.BindResponseWriter(gzw, c, func(p []byte) {
+        httputil.SetDetectedContentType(c.ResponseWriter, p)
+    })
+
+    c.Next()
 })
 
 core.Use(func(c *core.Context) {
-    // The overwritten context's ResponseWriter is used in a transparent way.
     c.ResponseWriter.Write([]byte("Hello, World!"))
 })</code></pre>

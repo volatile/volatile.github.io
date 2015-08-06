@@ -1,14 +1,14 @@
 <h1>Pass data</h1>
 <p>
 	To transmit data from a handler to another, the context has the <a href="https://godoc.org/github.com/volatile/core#Context" title="GoDoc"><code>Data</code></a> field, which is a <code>map[string]interface{}</code>.<br>
-	For example, it can be used to parse request data a single time in a top handler, and transmit the result trough the handlers chain without doing the work each time.
+	For example, it can be used to do heavy work upstream, and get the result downstream without repeating the work.
 </p>
 <pre><code class="go">// Set data
 core.Use(func(c *core.Context) {
     c.Data["id"] = 123
 })
 
-// Read data
+// Get data
 core.Use(func(c *core.Context) {
     println(c.Data["id"].(int))
 })</code></pre>
