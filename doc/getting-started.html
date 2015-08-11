@@ -4,41 +4,30 @@
 	Before creating an app with Volatile, you must have a working Go installation.<br>
 	Follow the <a href="https://golang.org/doc/install">official guide</a> (and don't forget to set your <a href="https://golang.org/doc/code.html"><code>GOPATH</code></a> environment variable).
 </p>
-<h2><span class="dim">2</span> Install the Volatile Core</h2>
+<h2><span class="dim">2</span> Install Volatile</h2>
 <p>
-	Get the <a href="https://github.com/volatile/core" title="Volatile Core on GitHub">Core</a> package with the <code>go get</code> command:
+	Get the <a href="https://github.com/volatile/volatile" title="Volatile on GitHub">Volatile command line interface</a> with the <code>go get</code> command:
 </p>
-<pre><code class="bash">$ go get github.com/volatile/core</code></pre>
-<h2><span class="dim">3</span> Create your app</h2>
-Create a new project directory in your <code>GOPATH</code> and go into it:
-<pre><code class="bash">$ mkdir -p $GOPATH/src/$USER/volatileapp &amp;&amp; cd $_</code></pre>
-Open your favorite text editor and create an <code>app.go</code> file in this directory:
-<pre><code class="go">package main
-
-import (
-    "fmt"
-    "log"
-    "time"
-
-    "github.com/volatile/core"
-)
-
-func main() {
-    // Log
-    core.Use(func(c *core.Context) {
-        start := time.Now()
-        c.Next()
-        log.Printf(" %s  %s  %s", c.Request.Method, c.Request.URL, time.Since(start))
-    })
-
-    // Response
-    core.Use(func(c *core.Context) {
-        fmt.Fprint(c.ResponseWriter, "Hello, World!")
-    })
-
-    core.Run()
-}</code></pre>
-<h2><span class="dim">4</span> Run your app</h2>
-Return in your terminal, build and run your new app:
-<pre><code class="bash">$ go build &amp;&amp; ./volatileapp</code></pre>
-The server is now reachable at <a href="http://localhost:8080/">localhost:8080</a>.
+<pre><code class="bash">$ go get github.com/volatile/volatile</code></pre>
+<h2><span class="dim">3</span> Create a new app</h2>
+<pre><code class="bash">$ volatile new myapp</code></pre>
+<p>
+	… creates a new directory named "myapp" and puts bootstrap code in.
+</p>
+<p>
+	If your future app will be an API, use the <code>api</code> argument:
+</p>
+<pre><code class="bash">$ volatile new api myapp</code></pre>
+<p>
+	The app is run directly and is reachable at <a href="http://localhost:8080/">localhost:8080</a>.
+</p>
+<h2><span class="dim">4</span> In the near future</h2>
+<p>
+	When you're inside a Volatile app directory, just use…
+</p>
+<pre><code class="bash">$ volatile</code></pre>
+… to automatically recompile and rerun the app every time a file change.
+<p>
+	Finally, to get updated versions of the <a href="https://github.com/volatile/core">Volatile Core</a> and all <a href="https://github.com/volatile/core#official-handlers">official packages</a>:
+</p>
+<pre><code class="bash">$ volatile update</code></pre>
