@@ -165,7 +165,7 @@ header h1.logo {
 
 @media (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5) {
 	header h1.logo {
-		background-image: url("/images/logo.png");
+		background-image: url("/images/logo@2x.png");
 		background-size: 700px 200px;
 	}
 }
