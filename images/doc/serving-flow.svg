@@ -88,9 +88,9 @@
                 </g>
             </g>
             <g transform="translate(1.000000, 1.000000)">
-                <rect stroke="#FF2D55" stroke-width="2" x="0" y="0" width="102" height="29" rx="3"></rect>
-                <text font-family="Gotham" font-size="18" font-weight="313" fill="#FF2D55">
-                    <tspan x="6" y="21">REQUEST</tspan>
+                <rect stroke="#FF2D55" stroke-width="2" x="0" y="0" width="96" height="29" rx="3"></rect>
+                <text font-family="Open Sans" font-size="19" font-weight="normal" fill="#FF2D55">
+                    <tspan x="6" y="22">REQUEST</tspan>
                 </text>
             </g>
         </g>
