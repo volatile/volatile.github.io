@@ -11,7 +11,7 @@
             </text>
             <g transform="translate(1.000000, 260.000000)">
                 <rect stroke="#FF2D55" stroke-width="2" x="0" y="0" width="156" height="29" rx="3"></rect>
-                <text font-family="Gotham" font-size="18" font-weight="313" fill="#FF2D55">
+                <text font-family="Arial" font-size="18" font-weight="normal" fill="#FF2D55">
                     <tspan x="6" y="21">NEW CONTEXT</tspan>
                 </text>
                 <path d="M14,30 L14,88" stroke="#FF2D55" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"></path>
@@ -28,7 +28,7 @@
             </text>
             <g transform="translate(0.000000, 121.000000)">
                 <rect fill="#FF2D55" x="0" y="0" width="272" height="31" rx="3"></rect>
-                <text font-family="Gotham" font-size="18" font-weight="313" fill="#FFFFFF">
+                <text font-family="Arial" font-size="18" font-weight="normal" fill="#FFFFFF">
                     <tspan x="7" y="22">RESPONSE WRITER BINDER</tspan>
                 </text>
                 <path d="M15,31 L15,105" stroke="#FF2D55" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"></path>
@@ -41,29 +41,29 @@
             </text>
             <g transform="translate(1.000000, 1.000000)">
                 <rect stroke="#FF2D55" stroke-width="2" x="0" y="0" width="202" height="29" rx="3"></rect>
-                <text font-family="Gotham" font-size="18" font-weight="313" fill="#FF2D55">
+                <text font-family="Arial" font-size="18" font-weight="normal" fill="#FF2D55">
                     <tspan x="6" y="21">ORIGINAL CONTEXT</tspan>
                 </text>
                 <path d="M14,29.99138 L14,88" stroke="#FF2D55" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"></path>
             </g>
             <g transform="translate(281.000000, 206.000000)">
                 <polygon fill="#5E676E" points="170 52 178 68 162 68 "></polygon>
-                <text font-family="Gotham" font-size="16" font-weight="260" fill="#5E676E">
-                    <tspan x="184" y="66">==</tspan>
+                <text font-family="Arial" font-size="16" font-weight="normal" fill="#5E676E">
+                    <tspan x="184" y="67">==</tspan>
                 </text>
                 <path d="M8.8817842e-16,120 L167.002941,120 C167.002941,120 170.002945,119.999999 170.002941,117 C170.002938,114.285675 170.002945,6.99999987 170.002945,3.99999994 C170.002945,1 167.002945,1 167.002945,1 L144,1" stroke="#5E676E" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"></path>
             </g>
             <g transform="translate(347.000000, 170.000000)">
                 <polygon fill="#4CD964" points="104 7 112 23 96 23 "></polygon>
-                <text font-family="Gotham" font-size="16" font-weight="260" fill="#4CD964">
-                    <tspan x="118" y="21">Writes…</tspan>
+                <text font-family="Arial" font-size="16" font-weight="normal" fill="#4CD964">
+                    <tspan x="118" y="22">Writes…</tspan>
                 </text>
                 <path d="M78,31 L101.017851,31 C101.017851,31 104.017851,30.9999994 104.017851,28 C104.017852,25.6354083 104.017853,6.59148081 104.017852,3.78710937 C104.017851,0.98273794 101.017851,0.98273794 101.017851,0.98273794 L0.994977585,0.98273794" stroke="#4CD964" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"></path>
             </g>
             <g transform="translate(280.000000, 66.000000)">
                 <polygon fill="#4CD964" points="171 41 179 57 163 57 "></polygon>
-                <text font-family="Gotham" font-size="16" font-weight="260" fill="#4CD964">
-                    <tspan x="185" y="55">Writes…</tspan>
+                <text font-family="Arial" font-size="16" font-weight="normal" fill="#4CD964">
+                    <tspan x="185" y="56">Writes…</tspan>
                 </text>
                 <path d="M68,99 L168.026298,99 C168.026298,99 171.026303,99.0000037 171.026298,96 C171.026293,93.3260254 171.026287,6.95898048 171.026297,3.92822265 C171.026308,0.897464818 168.026298,0.897464818 168.026298,0.897464818 L0.975175661,0.897464818" stroke="#4CD964" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"></path>
             </g>
