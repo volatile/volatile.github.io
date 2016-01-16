@@ -57,6 +57,10 @@ body {
 	color: #bec9d3;
 }
 
+em {
+	font-style: italic;
+}
+
 strong {
 	font-weight: 700;
 }

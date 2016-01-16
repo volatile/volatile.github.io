@@ -2,7 +2,6 @@ function hashInDocTableOfContents(hash) {
 	return $('.doc .table-of-contents ol a[href="'+hash+'"]').length > 0;
 }
 
-
 function loadDocContent(hash) {
 	$.get('/doc/'+hash.substr(1)+'.html', function(data) {
 		$('.doc .content').fadeOut(100, function(argument) {
@@ -16,9 +15,7 @@ function loadDocContent(hash) {
 	});
 }
 
-
 $(document).ready(function() {
-
 	// Init highlight.js
 	hljs.initHighlighting();
 
@@ -40,5 +37,4 @@ $(document).ready(function() {
 	$('.doc .table-of-contents ol a').click(function() {
 		loadDocContent($(this).attr('href'));
 	});
-
 });
