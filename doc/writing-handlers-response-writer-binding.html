@@ -1,6 +1,6 @@
 <h1>Response writer binding</h1>
 <p>If some of your handlers need to transform the request before sending it, they can't use the same response writer for all the stream.</p>
-<p>That's why the <a href="https://godoc.org/github.com/volatile/core/httputil">Core HTTPUtil</a> provides the <a href="https://godoc.org/github.com/volatile/core/httputil#BindResponseWriter"><code>BindResponseWriter</code></a> function.<br>
+<p>That's why <a href="https://godoc.org/github.com/volatile/core/httputil">core/httputil</a> provides the <a href="https://godoc.org/github.com/volatile/core/httputil#BindResponseWriter"><code>BindResponseWriter</code></a> function.<br>
 It will transparently replace the context's <a href="https://godoc.org/github.com/volatile/core#Context"><code>ResponseWriter</code></a> field by a new one.</p>
 <p>After that, when writing a response, the content will be automatically redirected into the the writer provided supplied as the first parameter of <a href="https://godoc.org/github.com/volatile/core/httputil#BindResponseWriter"><code>BindResponseWriter</code></a> (that will normally take care to use the original <a href="https://godoc.org/github.com/volatile/core#Context"><code>ResponseWriter</code></a>).</p>
 <p class="shift"><img src="/images/doc/response-writer-binder.svg" alt="Response writer binder flow"></p>
