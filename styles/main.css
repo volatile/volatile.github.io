@@ -8,31 +8,33 @@ Colors:
 	Purple: #5856d6
 */
 
-/* Main */
+/* Reset */
 
-*,
-*:before,
-*:after {
+* {
 	box-sizing: border-box;
 }
 
-html,
-body {
-	height: 100%;
+*:focus {
+	outline: none;
+}
+
+menu {
 	margin: 0;
 	padding: 0;
 }
 
+/* Main */
+
+html,
 body {
-	color: #000;
-	font-family: "Open Sans", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
-	font-size: 18px;
-	line-height: 1.4;
-	min-width: 800px;
+	margin: 0;
 }
 
-.clearfix {
-	zoom: 1;
+body {
+	background: #fff;
+	color: #000;
+	font: 1.2em/1.4 sans-serif;
+	min-width: 800px;
 }
 
 .clearfix:before,
@@ -103,11 +105,11 @@ a:hover {
 /* Code */
 
 code {
-	padding: 0 5px;
-
-	color: #fff;
-	border-radius: 3px;
 	background-color: #000;
+	border-radius: 3px;
+	color: #fff;
+	font: 1.2em/1.4 monospace;
+	padding: 0 5px;
 }
 
 a > code {
@@ -179,7 +181,7 @@ header .github:hover span {
 }
 
 header .down-arrow {
-	animation: fadein 6s ease, floating 2s .1s infinite ease-in-out;
+	animation: fadein ease, floating 2s .1s infinite ease-in-out;
 	background: url("/images/down-arrow.svg") center bottom no-repeat;
 	bottom: 50px;
 	height: 63px;
@@ -245,20 +247,16 @@ section .section-title {
 
 /* Documentation */
 
-.doc {
-	background: #fff;
-}
-
 .doc .main {
 	display: table;
 	padding: 100px;
+	table-layout: fixed;
 	width: 100%;
 }
 
 .doc .main .table-of-contents,
 .doc .main .content {
 	display: table-cell;
-	vertical-align: top;
 }
 
 .doc .main .table-of-contents {
@@ -411,4 +409,59 @@ section.handlers-helpers .grid a span {
 	to {
 		    transform: translate(-50%, 0%);
 	}
+}
+
+/* Highlight.js */
+
+.hljs {
+	background: #fff;
+	border-left: 2px solid #dbe2e8;
+	display: block;
+	font: 1em/1.2 monospace;
+	padding: 0 0 0 25px;
+	white-space: pre-wrap;
+}
+
+.hljs,
+.hljs-code,
+.hljs-list .hljs-built_in {
+	color: #000;
+}
+
+.hljs-attribute,
+.hljs-built_in,
+.hljs-constant,
+.hljs-header,
+.hljs-keyword,
+.hljs-link_label,
+.hljs-literal,
+.hljs-tag,
+.hljs-typename,
+.hljs-variable {
+	color: #5856d6;
+}
+
+.hljs-emphasis,
+.hljs-header,
+.hljs-keyword,
+.hljs-strong,
+.hljs-tag {
+	font-weight: bold;
+}
+
+.hljs-blockquote,
+.hljs-bullet,
+.hljs-cdata,
+.hljs-comment,
+.hljs-doctype,
+.hljs-horizontal_rule,
+.hljs-shebang {
+	color: #bec9d3;
+}
+
+.hljs-link_url,
+.hljs-number,
+.hljs-string,
+.hljs-value {
+	color: #5e676e;
 }

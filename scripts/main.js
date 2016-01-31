@@ -1,40 +1,62 @@
-function hashInDocTableOfContents(hash) {
-	return $('.doc .table-of-contents ol a[href="'+hash+'"]').length > 0;
+var docContent, docLinks, downArrow;
+
+function ready(fn) {
+	if (document.readyState != "loading") {
+		fn();
+	} else {
+		document.addEventListener("DOMContentLoaded", fn);
+	}
+}
+
+function docExists(hash) {
+	for (var i = 0; i < docLinks.length; i++) {
+		if (docLinks[i].getAttribute("href") == hash) {
+			return true;
+		}
+	}
+	return false;
 }
 
 function loadDocContent(hash) {
-	$.get('/doc/'+hash.substr(1)+'.html', function(data) {
-		$('.doc .content').fadeOut(100, function(argument) {
-			// Replace content
-			$(this).html(data);
-			// Set highlight.js on new content
-			$('pre code').each(function(i, block) {
-				hljs.highlightBlock(block);
-			});
-		}).fadeIn(100);
-	});
+	var request = new XMLHttpRequest();
+	request.open("GET", "/doc/"+hash.substr(1)+".html", true);
+	request.onload = function() {
+		if (this.status >= 200 && this.status < 400) {
+			docContent.innerHTML = this.response;
+
+			var codes = document.querySelectorAll("pre code");
+			for (var i = 0; i < codes.length; i++) {
+				hljs.highlightBlock(codes[i]);
+			}
+		}
+	};
+	request.send();
 }
 
-$(document).ready(function() {
-	// Init highlight.js
+ready(function () {
+	docContent = document.querySelectorAll(".doc .content")[0];
+	docLinks = document.querySelectorAll(".doc .table-of-contents ol a");
+	downArrow = document.querySelectorAll("header .down-arrow")[0];
+
+	// Down arrow
+	window.onscroll = function () {
+		if (this.pageYOffset > 200) {
+			downArrow.style.opacity = 0;
+		}
+	};
+
+	// Highlight.js
 	hljs.initHighlighting();
 
-	$(window).scroll(function() {
-		if ($(this).scrollTop() > 200) {
-			$('header .down-arrow').css({
-				opacity: 0
-			});
-		}
-	});
-
-	// Load documentation
-	if (hashInDocTableOfContents(window.location.hash)) {
+	// Documentation
+	if (docExists(window.location.hash)) {
 		loadDocContent(window.location.hash);
 	} else {
-		loadDocContent($('.doc .table-of-contents ol a').attr('href'));
+		loadDocContent(docLinks[0].getAttribute("href"));
 	}
-
-	$('.doc .table-of-contents ol a').click(function() {
-		loadDocContent($(this).attr('href'));
-	});
+	for (var i = 0; i < docLinks.length; i++) {
+		docLinks[i].onclick = function () {
+			loadDocContent(this.getAttribute("href"));
+		};
+	}
 });

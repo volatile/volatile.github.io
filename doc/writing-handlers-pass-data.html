@@ -5,10 +5,10 @@
 </p>
 <pre><code class="go">// Set data
 core.Use(func(c *core.Context) {
-    c.Data["id"] = 123
+	c.Data["id"] = 123
 })
 
 // Get data
 core.Use(func(c *core.Context) {
-    println(c.Data["id"].(int))
+	println(c.Data["id"].(int))
 })</code></pre>
