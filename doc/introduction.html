@@ -1,25 +1,62 @@
 <h1>Introduction</h1>
+
 <p>Volatile is a web framework for <a href="http://golang.org">Go</a> (golang).<br>
-All begins with the <a href="https://godoc.org/github.com/volatile/core">core</a>…</p>
-<p>Volatile <a href="https://godoc.org/github.com/volatile/core">core</a> is the perfect foundation for any web app as it's designed to have the best balance between <strong>readability</strong>, <strong>flexibility</strong> and <strong>performance</strong>.</p>
-<p>It provides a pure handlers (or <em>middlewares</em>) stack so you can perform actions downstream, then filter and manipulate the response upstream.</p>
+It's the perfect foundation for any web app as it's designed to have the best balance between <strong>readability</strong>, <strong>flexibility</strong> and <strong>performance</strong>.</p>
+
+<p>Package <a href="https://godoc.org/github.com/volatile/core">core</a> provides a pure handlers (or middlewares) stack so you can perform actions downstream, then filter and manipulate the response upstream.</p>
+
 <p>No handlers or helpers are bundled in the <a href="https://godoc.org/github.com/volatile/core">core</a>: it does one thing and does it well.<br>
-You can find <a href="#handlers-and-helpers">official packages</a> below.</p>
+That's why you have to import all and only the <a href="#handlers-and-helpers">handlers or helpers</a> you need.</p>
+
 <h2>The handlers stack</h2>
-<p>The handlers stack is the backbone of Volatile. Everything revolves around it.</p>
-<p>Here is the visualization of the serving flow when using the <a href="https://godoc.org/github.com/volatile/log">Log</a>, <a href="https://godoc.org/github.com/volatile/compress">Compress</a> and <a href="https://godoc.org/github.com/volatile/cors">CORS</a> handlers:</p>
-<p class="shift"><img src="/images/doc/serving-flow.svg" alt="Serving flow"></p>
-<h2>The handler</h2>
-<p>A handler is simply a function that receives a context.<br>
-It has the possibility to break the sream or to continue with the next handler in the stack.</p>
-<p>To add a handler to the stack, just use the core's <a href="https://godoc.org/github.com/volatile/core#Use"><code>Use</code></a> function:</p>
-<pre><code class="go">core.Use(func(c *core.Context) {
-	c.Next() // Go to the next handler in the stack.
+
+<p>A handler is a function that receives a <a href="https://godoc.org/github.com/volatile/core#Context"><code>Context</code></a> (which contains the response writer and the request).<br>
+It can be registered with <a href="https://godoc.org/github.com/volatile/core#Use"><code>Use</code></a> and has the possibility to break the stream or to continue with the next handler of the stack.</p>
+
+<p>Example of a logger, followed by a security headers setter, followed by a response writer:</p>
+
+<pre><code class="go">// Log
+core.Use(func(c *core.Context) {
+	// Before the response.
+	start := time.Now()
+
+	// Execute the next handler in the stack.
+	c.Next()
+
+	// After the response.
+	log.Printf(" %s  %s  %s", c.Request.Method, c.Request.URL, time.Since(start))
 })
 
+// Secure
 core.Use(func(c *core.Context) {
-	// No c.Next(). The handlers stream ends here.
-})</code></pre>
-<h2>The context</h2>
-<p>A context is created for each request and throwed inside the handlers stack.<br>
-It encapsulates the classics: the <a href="http://golang.org/pkg/net/http/#Request"><code>*http.Request</code></a> and the <a href="http://golang.org/pkg/net/http/#ResponseWriter"><code>http.ResponseWriter</code></a> from the standard <a href="http://golang.org/pkg/net/http/">net/http</a> package.</p>
+	c.ResponseWriter.Header().Set("X-Frame-Options", "SAMEORIGIN")
+	c.ResponseWriter.Header().Set("X-Content-Type-Options", "nosniff")
+	c.ResponseWriter.Header().Set("X-XSS-Protection", "1; mode=block")
+
+	// Execute the next handler in the stack.
+	c.Next()
+})
+
+// Response
+core.Use(func(c *core.Context) {
+	fmt.Fprint(c.ResponseWriter, "Hello, World!")
+})
+
+// Run server
+core.Run()</code></pre>
+
+<p>A clearer visualization of this serving flow:</p>
+
+<p class="shift"><img src="/images/doc/serving-flow.svg" alt="Serving flow"></p>
+
+<p>When using <a href="https://godoc.org/github.com/volatile/core#Run"><code>Run</code></a>, your app is reachable at <a href="http://localhost:8080">http://localhost:8080</a> by default.</p>
+
+<p>If you need more flexibility, you can make a new handlers stack, which is fully compatible with the net/http.Handler interface:</p>
+
+<pre><code class="go">hs := core.NewHandlersStack()
+
+hs.Use(func(c *core.Context) {
+	fmt.Fprint(c.ResponseWriter, "Hello, World!")
+})
+
+http.ListenAndServe(":8080", hs)</code></pre>

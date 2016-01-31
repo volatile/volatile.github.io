@@ -1,19 +1,29 @@
 <h1>Getting started</h1>
+
 <h2><span class="dim">1</span> Installation</h2>
+
 <p>Get the Volatile CLI:</p>
 <pre><code class="bash">go get github.com/volatile/volatile</code></pre>
+
 <h2><span class="dim">2</span> New app</h2>
+
 <p>Command</p>
 <pre><code class="bash">volatile new myapp</code></pre>
 <p>creates a new directory named "myapp" and puts bootstrap code in.</p>
+
 <p>If your future app will be an API, use the <code>api</code> argument:</p>
 <pre><code class="bash">volatile new api myapp</code></pre>
+
 <h2><span class="dim">3</span> Run app</h2>
+
 <p>When you are inside a Volatile app directory, just use</p>
 <pre><code class="bash">volatile</code></pre>
 <p>to automatically recompile and rerun the app every time a file change.</p>
+
 <p>A <code>./build</code> file can be used to automatically execute a shell script before building and running your app.<br>
 Don't forget the shebang and the executability rights for this script!</p>
+
 <h2><span class="dim">4</span> Update Volatile</h2>
+
 <p>To get updated versions of the <a href="https://godoc.org/github.com/volatile/core">core</a> and all <a href="#handlers-and-helpers">handlers and helpers</a>:</p>
 <pre><code class="bash">volatile update</code></pre>
