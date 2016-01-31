@@ -1,36 +1,24 @@
 <h1>Introduction</h1>
 <p>
-	Volatile is a web framework for <a href="http://golang.org" title="The Go language official website">Go</a> (golang).<br>
-	All begins with the <a href="https://github.com/volatile/core" title="Volatile Core on GitHub">Core</a>…
+	Volatile is a web framework for <a href="http://golang.org">Go</a> (golang).<br>
+	All begins with the <a href="https://godoc.org/github.com/volatile/core">Core</a>…
 </p>
+<p>Volatile <a href="https://godoc.org/github.com/volatile/core">Core</a> is the perfect foundation for any web app as it's designed to have the best balance between <strong>readability</strong>, <strong>flexibility</strong> and <strong>performance</strong>.</p>
+<p>It provides a pure handlers (or <em>middlewares</em>) stack so you can perform actions downstream, then filter and manipulate the response upstream.</p>
 <p>
-	Volatile <a href="https://github.com/volatile/core" title="Volatile Core on GitHub">Core</a> is the perfect foundation for any web app as it's designed to have the best balance between <strong>readability</strong>, <strong>flexibility</strong> and <strong>performance</strong>.<br>
-</p>
-<p>
-	It provides a pure handlers (or <em>middlewares</em>) stack so you can perform actions downstream, then filter and manipulate the response upstream.
-</p>
-<p>
-	No handlers or helpers are bundled in the <a href="https://github.com/volatile/core" title="Volatile Core on GitHub">Core</a>: it does one thing and does it well.<br>
-	You can find <a href="#handlers-and-helpers" title="Handlers &amp; Helpers">official packages</a> below.
+	No handlers or helpers are bundled in the <a href="https://godoc.org/github.com/volatile/core">Core</a>: it does one thing and does it well.<br>
+	You can find <a href="#handlers-and-helpers">official packages</a> below.
 </p>
 <h2>The handlers stack</h2>
-<p>
-	The handlers stack is the backbone of Volatile. Everything revolves around it.<br>
-</p>
-<p>
-	Here is the visualization of the serving flow when using the <a href="https://github.com/volatile/log" title="Volatile Log on GitHub">Log</a>, <a href="https://github.com/volatile/compress" title="Volatile Compress on GitHub">Compress</a> and <a href="https://github.com/volatile/cors" title="Volatile CORS on GitHub">CORS</a> handlers:
-</p>
-<p class="shift">
-	<img src="/images/doc/serving-flow.svg" alt="Serving flow">
-</p>
+<p>The handlers stack is the backbone of Volatile. Everything revolves around it.</p>
+<p>Here is the visualization of the serving flow when using the <a href="https://godoc.org/github.com/volatile/log">Log</a>, <a href="https://godoc.org/github.com/volatile/compress">Compress</a> and <a href="https://godoc.org/github.com/volatile/cors">CORS</a> handlers:</p>
+<p class="shift"><img src="/images/doc/serving-flow.svg" alt="Serving flow"></p>
 <h2>The handler</h2>
 <p>
 	A handler is simply a function that receives a context.<br>
 	It has the possibility to break the sream or to continue with the next handler in the stack.
 </p>
-<p>
-	To add a handler to the stack, just use the Core's <a href="https://godoc.org/github.com/volatile/core#Use" title="GoDoc"><code>Use</code></a> function:
-</p>
+<p>To add a handler to the stack, just use the Core's <a href="https://godoc.org/github.com/volatile/core#Use"><code>Use</code></a> function:</p>
 <pre><code class="go">core.Use(func(c *core.Context) {
     c.Next() // Go to the next handler in the stack.
 })
@@ -41,5 +29,5 @@ core.Use(func(c *core.Context) {
 <h2>The context</h2>
 <p>
 	A context is created for each request and throwed inside the handlers stack.<br>
-	It encapsulates the classics: the <a href="http://golang.org/pkg/net/http/#Request" title="GoDoc"><code>*http.Request</code></a> and the <a href="http://golang.org/pkg/net/http/#ResponseWriter" title="GoDoc"><code>http.ResponseWriter</code></a> from the standard <a href="http://golang.org/pkg/net/http/" title="GoDoc">net/http</a> package.
+	It encapsulates the classics: the <a href="http://golang.org/pkg/net/http/#Request"><code>*http.Request</code></a> and the <a href="http://golang.org/pkg/net/http/#ResponseWriter"><code>http.ResponseWriter</code></a> from the standard <a href="http://golang.org/pkg/net/http/">net/http</a> package.
 </p>

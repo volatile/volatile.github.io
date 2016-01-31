@@ -22,7 +22,7 @@
             <g transform="translate(15.000000, 234.000000) rotate(-90.000000) translate(-15.000000, -234.000000) translate(-127.000000, 219.000000)">
                 <rect fill="#FF2D55" x="0" y="1.77635684e-15" width="284" height="30" rx="3"></rect>
                 <text font-family="Arial" font-size="22" font-weight="normal" fill="#FFFFFF">
-                    <tspan x="50.5195312" y="23">HANDLER STACK</tspan>
+                    <tspan x="43.1826172" y="23">HANDLERS STACK</tspan>
                 </text>
             </g>
             <g transform="translate(46.000000, 346.000000)">

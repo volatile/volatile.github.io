@@ -3,54 +3,23 @@
 <p>
 	In a <code>README.md</code> file:
 </p>
-<pre><code class="md">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;PACKAGELOGO&quot; alt=&quot;Volatile PACKAGENAME&quot; title=&quot;Volatile PACKAGENAME&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+<pre><code class="md">&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://godoc.org/github.com/volatile/PACKAGENAME&quot;&gt;&lt;img src=&quot;http://volatile.whitedevops.com/images/repositories/PACKAGENAME/logo.png&quot; alt=&quot;PACKAGENAME&quot; title=&quot;PACKAGENAME&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 
-Volatile PACKAGENAME is a HANDLERORHELPER for the [Core](https://github.com/volatile/core).
+Package [PACKAGENAME](https://godoc.org/github.com/volatile/PACKAGENAME) is a HANDLERORHELPER for the [core](https://godoc.org/github.com/volatile/core).&nbsp;&nbsp;
 DESCRIPTION
 
-## Installation
-
-```Shell
-$ go get github.com/PACKAGEPATH
-```
-
-## Usage [![GoDoc](https://godoc.org/github.com/PACKAGEPATH?status.svg)](https://godoc.org/github.com/PACKAGEPATH)
-
-```Go
-package main
-
-import (
-	"github.com/PACKAGEPATH"
-)
-
-func main() {
-	PACKAGENAME.Use()
-
-	core.Run()
-}
-```</code></pre>
+[![GoDoc](https://godoc.org/github.com/volatile/PACKAGENAME?status.svg)](https://godoc.org/github.com/volatile/PACKAGENAME)</code></pre>
 <h2>GoDoc</h2>
 <p>
 	In a <code>doc.go</code> file:
 </p>
 <pre><code class="go">/*
-Package PACKAGENAME is a HANDLERORHELPER for the Core (https://github.com/volatile/core).
+Package PACKAGENAME is a HANDLERORHELPER for the core (https://godoc.org/github.com/volatile/core).
 DESCRIPTION
 
 Usage
 
-Example:
-
-	package main
-
-	import (
-		"github.com/PACKAGEPATH"
-	)
-
-	func main() {
-		PACKAGENAME.Use()
-
-		core.Run()
-	}
+Use adds the handler to the default handlers stack:
+	secure.Use(nil)
 */
 package PACKAGENAME</code></pre>

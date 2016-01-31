@@ -3,17 +3,17 @@
 	If some of your handlers need to transform the request before sending it, they can't use the same response writer for all the stream.<br>
 </p>
 <p>
-	That's why the <a href="https://godoc.org/github.com/volatile/core/httputil" title="GoDoc">Core HTTPUtil</a> provides the <a href="https://godoc.org/github.com/volatile/core/httputil#BindResponseWriter" title="GoDoc"><code>BindResponseWriter</code></a> function.<br>
-	It will transparently replace the context's <a href="https://godoc.org/github.com/volatile/core#Context" title="GoDoc"><code>ResponseWriter</code></a> field by a new one.<br>
+	That's why the <a href="https://godoc.org/github.com/volatile/core/httputil">Core HTTPUtil</a> provides the <a href="https://godoc.org/github.com/volatile/core/httputil#BindResponseWriter"><code>BindResponseWriter</code></a> function.<br>
+	It will transparently replace the context's <a href="https://godoc.org/github.com/volatile/core#Context"><code>ResponseWriter</code></a> field by a new one.<br>
 </p>
 <p>
-	After that, when writing a response, the content will be automatically redirected into the the writer provided supplied as the first parameter of <a href="https://godoc.org/github.com/volatile/core/httputil#BindResponseWriter" title="GoDoc"><code>BindResponseWriter</code></a> (that will normally take care to use the original <a href="https://godoc.org/github.com/volatile/core#Context" title="GoDoc"><code>ResponseWriter</code></a>).
+	After that, when writing a response, the content will be automatically redirected into the the writer provided supplied as the first parameter of <a href="https://godoc.org/github.com/volatile/core/httputil#BindResponseWriter"><code>BindResponseWriter</code></a> (that will normally take care to use the original <a href="https://godoc.org/github.com/volatile/core#Context"><code>ResponseWriter</code></a>).
 </p>
 <p class="shift">
 	<img src="/images/doc/response-writer-binder.svg" alt="Response writer binder flow">
 </p>
 <p>
-	If you need to do something just before writing the response body (like setting headers, as you can't do that after), use the <a href="https://godoc.org/github.com/volatile/core#ResponseWriterBinder" title="GoDoc"><code>BeforeWrite</code></a> field.
+	If you need to do something just before writing the response body (like setting headers, as you can't do that after), use the <a href="https://godoc.org/github.com/volatile/core#ResponseWriterBinder"><code>BeforeWrite</code></a> field.
 </p>
 <p>
 	Here is a trivial example where the response is passed to a GZIP writer:

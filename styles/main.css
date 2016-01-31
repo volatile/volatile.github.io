@@ -8,7 +8,6 @@ Colors:
 	Purple: #5856d6
 */
 
-
 /* Main */
 
 *,
@@ -25,13 +24,11 @@ body {
 }
 
 body {
+	color: #000;
 	font-family: "Open Sans", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 	font-size: 18px;
 	line-height: 1.4;
-
 	min-width: 800px;
-
-	color: #000;
 }
 
 .clearfix {
@@ -40,9 +37,8 @@ body {
 
 .clearfix:before,
 .clearfix:after {
-	display: table;
-
 	content: "";
+	display: table;
 }
 
 .clearfix:after {
@@ -65,7 +61,6 @@ strong {
 	font-weight: 700;
 }
 
-
 /* Titles */
 
 h1,
@@ -76,7 +71,6 @@ h5,
 h6 {
 	font-weight: 300;
 	line-height: 1;
-
 	margin-top: 50px;
 }
 
@@ -93,21 +87,18 @@ h6:first-child {
 	margin-top: 0;
 }
 
-
 /* Links */
 
 a {
-	transition: color .2s ease;
-	text-decoration: none;
-
 	color: #007aff;
 	outline: 0;
+	text-decoration: none;
+	transition: color .2s ease;
 }
 
 a:hover {
 	color: #5856d6;
 }
-
 
 /* Code */
 
@@ -120,90 +111,67 @@ code {
 }
 
 a > code {
-	transition: background-color .2s ease;
-
 	background: #007aff;
+	transition: background-color .2s ease;
 }
 
 a > code:hover {
 	background: #5856d6;
 }
 
-
 /* Header */
 
 header {
-	position: relative;
-
-	display: block;
-
-	width: 100%;
-	min-height: 100vh;
-
 	background: #000;
-
-	-webkit-transform-style: preserve-3d;
-	   -moz-transform-style: preserve-3d;
-	        transform-style: preserve-3d;
+	display: block;
+	min-height: 100vh;
+	position: relative;
+	transform-style: preserve-3d;
+	width: 100%;
 }
 
-header h1.logo {
+header .logo {
+	background: url("/images/logo.png") center top no-repeat;
+	display: block;
+	height: 200px;
+	left: 50%;
+	margin: 0;
 	position: absolute;
 	top: 50%;
-	left: 50%;
-
-	display: block;
-
 	width: 700px;
-	height: 200px;
-	margin: 0;
-
-	-webkit-transform: translate(-50%, -50%);
-	    -ms-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
-	-webkit-animation: fadein 2s ease;
-	        animation: fadein 2s ease;
-
-	background: url("/images/logo.png") center top no-repeat;
+        animation: fadein 2s ease;
+        transform: translate(-50%, -50%);
 }
 
 @media (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5) {
-	header h1.logo {
+	header .logo {
 		background-image: url("/images/logo@2x.png");
 		background-size: 700px 200px;
 	}
 }
 
 header .github {
-	position: absolute;
-	top: 25px;
-	right: 25px;
-
-	display: block;
-	overflow: hidden;
-
-	min-width: 40px;
-	height: 40px;
-
-	text-decoration: none;
-
 	background: url("/images/github-logo.svg") right center no-repeat;
+	display: block;
+	height: 40px;
+	min-width: 40px;
+	overflow: hidden;
+	position: absolute;
+	right: 25px;
+	text-decoration: none;
+	top: 25px;
 }
 
 header .github span {
-	line-height: 40px;
-
+	color: #fff;
 	display: block;
-	overflow: hidden;
-
+	line-height: 40px;
 	margin-right: 60px;
-
+	opacity: 0;
+	overflow: hidden;
+	text-decoration: none;
 	transition: opacity .2s ease;
 	white-space: nowrap;
-	text-decoration: none;
-
-	opacity: 0;
-	color: #fff;
 }
 
 header .github:hover span {
@@ -211,23 +179,16 @@ header .github:hover span {
 }
 
 header .down-arrow {
-	position: absolute;
-	bottom: 50px;
-	left: 50%;
-
-	width: 120px;
-	height: 63px;
-	margin: 0 auto;
-
-	transition: opacity 2s ease;
-
-	-webkit-transform: translateX(-50%);
-	    -ms-transform: translateX(-50%);
-	        transform: translateX(-50%);
-	-webkit-animation: fadein 6s ease, floating 2s .1s infinite ease-in-out;
-	        animation: fadein 6s ease, floating 2s .1s infinite ease-in-out;
-
+	animation: fadein 6s ease, floating 2s .1s infinite ease-in-out;
 	background: url("/images/down-arrow.svg") center bottom no-repeat;
+	bottom: 50px;
+	height: 63px;
+	left: 50%;
+	margin: 0 auto;
+	position: absolute;
+	transform: translateX(-50%);
+	transition: opacity 2s ease;
+	width: 120px;
 }
 
 @media (max-height: 750px) {
@@ -236,38 +197,29 @@ header .down-arrow {
 	}
 }
 
-
 /* Footer */
 
 footer {
-	font-size: 12px;
-
-	display: block;
-
-	padding: 100px;
-
-	text-align: center;
-
-	color: #bec9d3;
 	background: #fff;
+	color: #bec9d3;
+	display: block;
+	font-size: 12px;
+	padding: 100px;
+	text-align: center;
 }
 
 footer a {
-	text-decoration: underline;
-
 	color: #bec9d3;
+	text-decoration: underline;
 }
 
 footer .white-logo {
+	background: url("/images/white-logo.svg") center no-repeat;
 	display: block;
-
-	width: 75px;
 	height: 15px;
 	margin: 0 auto 25px auto;
-
-	background: url("/images/white-logo.svg") center no-repeat;
+	width: 75px;
 }
-
 
 /* Sections */
 
@@ -278,23 +230,18 @@ section > .center {
 }
 
 section .section-title {
+	background: #dbe2e8;
+	color: #fff;
+	display: block;
 	font-size: 52px;
 	font-weight: 300;
+	letter-spacing: .1em;
 	line-height: 1;
-
-	display: block;
-
 	margin: 0 auto;
 	padding: 10px 100px;
-
 	text-align: center;
-	letter-spacing: .1em;
 	text-transform: uppercase;
-
-	color: #fff;
-	background: #dbe2e8;
 }
-
 
 /* Documentation */
 
@@ -304,15 +251,13 @@ section .section-title {
 
 .doc .main {
 	display: table;
-
-	width: 100%;
 	padding: 100px;
+	width: 100%;
 }
 
 .doc .main .table-of-contents,
 .doc .main .content {
 	display: table-cell;
-
 	vertical-align: top;
 }
 
@@ -321,13 +266,10 @@ section .section-title {
 }
 
 .doc .main .table-of-contents ol {
-	margin: 0;
-
-	list-style-type: decimal;
-
-	counter-reset: item;
-
 	color: #5e676e;
+	counter-reset: item;
+	list-style-type: decimal;
+	margin: 0;
 }
 
 .doc .main .table-of-contents ol,
@@ -340,9 +282,8 @@ section .section-title {
 }
 
 .doc .main .table-of-contents > ol {
-	padding: 0;
-
 	border-right: 2px solid #dbe2e8;
+	padding: 0;
 }
 
 .doc .main .table-of-contents li {
@@ -350,12 +291,10 @@ section .section-title {
 }
 
 .doc .main .table-of-contents li:before {
-	margin-right: 5px;
-
+	color: #bec9d3;
 	content: counters(item, ".") " ";
 	counter-increment: item;
-
-	color: #bec9d3;
+	margin-right: 5px;
 }
 
 .doc .main .table-of-contents > ol > li + li {
@@ -382,8 +321,8 @@ section .section-title {
 	}
 
 	.doc .main .table-of-contents {
-		width: inherit;
 		margin-bottom: 100px;
+		width: inherit;
 	}
 
 	.doc .main .table-of-contents > ol {
@@ -395,13 +334,12 @@ section .section-title {
 	}
 }
 
-
 /* Handlers & Helpers */
 
 section.handlers-helpers {
-	color: #fff;
 	background: #007aff;
 	background: linear-gradient(135deg, #5a3fb5 0%, #3bc0ff 100%);
+	color: #fff;
 }
 
 section.handlers-helpers .section-title {
@@ -409,67 +347,50 @@ section.handlers-helpers .section-title {
 }
 
 section.handlers-helpers .grid {
-	margin: 75px;
-
+	margin: 75px auto;
+	max-width: 950px;
 	text-align: center;
 }
 
 section.handlers-helpers .grid .intro {
 	font-size: 22px;
 	font-weight: 300;
-
 	margin-bottom: 25px;
 }
 
 section.handlers-helpers .grid a {
-	display: inline-block;
-	overflow: hidden;
-
-	width: 175px;
-	margin: 25px;
-	padding: 20px;
-
-	transition: border-color .4s ease, background-color .4s ease;
-	text-align: center;
-	vertical-align: top;
-
-	color: #fff;
-	border: 2px solid #fff;
-	border-radius: 3px;
 	background: rgba(255, 255, 255, .2);
+	border-radius: 3px;
+	border: 2px solid #fff;
+	color: #fff;
+	display: inline-block;
+	margin: 25px;
+	overflow: hidden;
+	padding: 20px;
+	text-align: center;
+	transition: border-color .4s ease, background-color .4s ease;
+	vertical-align: top;
+	width: 175px;
 }
 
 section.handlers-helpers .grid a:hover {
-	border-color: #ff2d55;
 	background: #ff2d55;
+	border-color: #ff2d55;
 }
 
 section.handlers-helpers .grid a img,
 section.handlers-helpers .grid a span {
 	display: block;
-
 	margin: 0 auto;
 }
 
 section.handlers-helpers .grid a span {
 	font-size: 22px;
-
 	margin-top: 20px;
-
 	text-transform: uppercase;
 }
 
-
 /* Animations */
-
-@-webkit-keyframes fadein {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
 
 @keyframes fadein {
 	from {
@@ -480,29 +401,14 @@ section.handlers-helpers .grid a span {
 	}
 }
 
-@-webkit-keyframes floating {
-	from {
-		-webkit-transform: translate(-50%, 0%);
-	}
-	50% {
-		-webkit-transform: translate(-50%, -50%);
-	}
-	to {
-		-webkit-transform: translate(-50%, 0%);
-	}
-}
-
 @keyframes floating {
 	from {
-		-ms-transform: translate(-50%, 0%);
 		    transform: translate(-50%, 0%);
 	}
 	50% {
-		-ms-transform: translate(-50%, -50%);
 		    transform: translate(-50%, -50%);
 	}
 	to {
-		-ms-transform: translate(-50%, 0%);
 		    transform: translate(-50%, 0%);
 	}
 }
