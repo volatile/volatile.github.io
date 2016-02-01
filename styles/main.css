@@ -329,7 +329,6 @@ section .section-title {
 /* Handlers & Helpers */
 
 section.handlers-helpers {
-	background: #007aff;
 	background: linear-gradient(135deg, #5a3fb5 0%, #3bc0ff 100%);
 	color: #fff;
 }

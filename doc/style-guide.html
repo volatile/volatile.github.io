@@ -1,6 +1,19 @@
-<h1>Doc templates</h1>
+<h1>Style guide</h1>
 
-<h2>README</h2>
+<p>
+	The Volatile style guide recommends best practices for writing handlers and helpers packages.
+</p>
+
+<h2>Rules</h2>
+
+<ol>
+	<li>When package needs global configuration, make an <code>Init</code> function.</li>
+	<li>When package provides a handler for the default handlers stack, it must be under function <code>Use</code>.</li>
+	<li>When package provides a handler usable inside another handler, it must be under function <code>LocalUse</code>.</li>
+	<li>When function <code>Init</code> and/or <code>Use</code> can receive complex arguments, use an <code>*Options</code> structure pointer.</li>
+</ol>
+
+<h2>Doc templates</h2>
 
 <p>In a <code>README.md</code> file:</p>
 
@@ -10,8 +23,6 @@ Package [PACKAGENAME](https://godoc.org/github.com/volatile/PACKAGENAME) is a HA
 DESCRIPTION
 
 [![GoDoc](https://godoc.org/github.com/volatile/PACKAGENAME?status.svg)](https://godoc.org/github.com/volatile/PACKAGENAME)</code></pre>
-
-<h2>GoDoc</h2>
 
 <p>In a <code>doc.go</code> file:</p>
 
