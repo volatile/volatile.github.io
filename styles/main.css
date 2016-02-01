@@ -14,10 +14,6 @@ Colors:
 	box-sizing: border-box;
 }
 
-*:focus {
-	outline: none;
-}
-
 menu {
 	margin: 0;
 	padding: 0;
@@ -93,7 +89,6 @@ h6:first-child {
 
 a {
 	color: #007aff;
-	outline: 0;
 	text-decoration: none;
 	transition: color .2s ease;
 }
@@ -303,7 +298,7 @@ section .section-title {
 	padding-left: 100px;
 }
 
-.doc .main .content p.shift {
+.doc .main .content .shift {
 	margin: 50px;
 }
 
