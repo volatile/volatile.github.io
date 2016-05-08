@@ -1,4 +1,4 @@
-var docContent, docLinks, downArrow;
+var downArrow, docLinks, docContent;
 
 function ready(fn) {
 	if (document.readyState != "loading") {
@@ -34,9 +34,9 @@ function loadDocContent(hash) {
 }
 
 ready(function () {
-	docContent = document.querySelectorAll(".doc .content")[0];
+	downArrow = document.querySelector("header .down-arrow");
 	docLinks = document.querySelectorAll(".doc .table-of-contents ol a");
-	downArrow = document.querySelectorAll("header .down-arrow")[0];
+	docContent = document.querySelector(".doc .content");
 
 	// Down arrow
 	window.onscroll = function () {
