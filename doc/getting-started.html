@@ -9,7 +9,7 @@
 
 <p>Command</p>
 <pre><code class="bash">volatile new myapp</code></pre>
-<p>creates a new directory named "myapp" and puts bootstrap code in.</p>
+<p>makes a new directory named "myapp" and puts bootstrap code in.</p>
 
 <p>If your future app will be an API, use the <code>api</code> argument:</p>
 <pre><code class="bash">volatile new api myapp</code></pre>
@@ -20,10 +20,9 @@
 <pre><code class="bash">volatile</code></pre>
 <p>to automatically recompile and rerun the app every time a file change.</p>
 
-<p>A <code>./build</code> file can be used to automatically execute a shell script before building and running your app.<br>
-Don't forget the shebang and the executability rights for this script!</p>
+<p>When a <code>Makefile</code> is present, the make command is triggered before building and running your app.</p>
 
 <h2><span class="dim">4</span> Update Volatile</h2>
 
-<p>To get updated versions of the <a href="https://godoc.org/github.com/volatile/core">core</a> and all <a href="#handlers-and-helpers">handlers and helpers</a>:</p>
+<p>To get updated versions of the Volatile CLI, the <a href="https://godoc.org/github.com/volatile/core">core</a> and all <a href="#handlers-and-helpers">handlers and helpers</a>:</p>
 <pre><code class="bash">volatile update</code></pre>
